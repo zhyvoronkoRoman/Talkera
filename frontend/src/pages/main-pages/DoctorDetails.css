@@ -1,0 +1,289 @@
+/* src/pages/DoctorDetails.css */
+
+.details-page {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    padding: 40px 0 80px;
+  }
+  
+  .loading {
+    text-align: center;
+    padding: 50px;
+    font-size: 1.5rem;
+    color: var(--text-secondary);
+  }
+  
+  .back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+  
+  .back-link:hover {
+    color: var(--primary-blue);
+  }
+  
+  /* Сітка сторінки */
+  .doctor-profile-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr; /* Фіксована колонка зліва + гнучка справа */
+    gap: 40px;
+    align-items: start;
+  }
+  
+  /* --- Ліва колонка (Сайдбар) --- */
+  .profile-sidebar {
+    background-color: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 20px; /* Прилипає при прокрутці */
+  }
+  
+  .profile-image-box {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 4px solid var(--light-blue);
+  }
+  
+  .profile-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profession-badge {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+  
+  .profile-summary h2 {
+    color: var(--text-main);
+    margin: 15px 0 5px;
+  }
+  
+  .experience {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .price-tag {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-green);
+  }
+  
+  .price-tag span {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+  }
+  
+  /* --- Права колонка (Контент) --- */
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  /* Секція Інформації */
+  .info-section {
+    background-color: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .info-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    border-bottom: 1px solid var(--light-blue);
+    padding-bottom: 10px;
+  }
+  
+  .education-text, .about-text {
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 25px;
+  }
+  
+  /* Секція Запису (Бронювання) */
+  .booking-section {
+    background-color: var(--bg-white);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 2px solid var(--light-blue); /* Виділяємо блок запису */
+  }
+  
+  .booking-section h3 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+  }
+  
+  .booking-hint {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+  }
+  
+  /* Дні (Scroller) */
+  .days-scroller {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .day-card {
+    min-width: 100px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    background-color: #fff;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .day-card:hover {
+    border-color: var(--primary-blue);
+  }
+  
+  .day-card.active {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+  }
+  
+  .day-name {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  
+  .day-date {
+    font-size: 0.8rem;
+    opacity: 0.8;
+  }
+  
+  /* Групування слотів за датами */
+  .slots-by-date {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .date-group {
+    border: 1px solid var(--light-blue);
+    border-radius: 12px;
+    padding: 20px;
+    background-color: var(--bg-light);
+  }
+
+  .date-header {
+    color: var(--primary-blue);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--light-blue);
+  }
+
+  /* Години (Grid) */
+  .hours-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+    margin-bottom: 0;
+  }
+  
+  .time-btn {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 0.95rem;
+  }
+  
+  .time-btn:hover {
+    border-color: var(--accent-green);
+    color: var(--accent-green);
+  }
+  
+  .time-btn.active {
+    background-color: var(--accent-green);
+    color: white;
+    border-color: var(--accent-green);
+    font-weight: bold;
+  }
+  
+  /* Кнопка дії */
+  .booking-action {
+    text-align: right;
+  }
+  
+  .btn-book-now {
+    padding: 15px 40px;
+    background-color: var(--primary-blue);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .btn-book-now:hover:not(:disabled) {
+    background-color: var(--dark-green); /* Стає зеленим при наведенні, як заклик до дії */
+    transform: translateY(-2px);
+  }
+  
+  .btn-book-now:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Адаптивність */
+  @media (max-width: 850px) {
+    .doctor-profile-grid {
+      grid-template-columns: 1fr; /* Стає в одну колонку */
+    }
+    
+    .profile-sidebar {
+      position: static; /* Перестає бути липким */
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .booking-action {
+      text-align: center;
+    }
+    
+    .btn-book-now {
+      width: 100%;
+    }
+  }

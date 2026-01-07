@@ -1,0 +1,238 @@
+/* src/GameLinearJourney.css */
+@import '../../index.css';
+.linear-journey-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .journey-header {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .journey-header h2 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+  }
+  
+  .journey-header p {
+    color: var(--text-secondary);
+  }
+  
+  /* --- Canvas (Полотно) --- */
+  .canvas-wrapper {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 4px solid var(--light-blue);
+    background-color: #fff;
+    margin-bottom: 30px;
+    cursor: crosshair;
+  }
+  
+  .journey-canvas {
+    display: block;
+    background-color: #fff;
+    background-image: radial-gradient(var(--light-blue) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+  
+  .canvas-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0.6;
+  }
+  
+  .canvas-placeholder span {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    background: rgba(224, 247, 250, 0.9);
+    padding: 12px 24px;
+    border-radius: 30px;
+    border: 1px solid var(--light-blue);
+  }
+  
+  /* --- Панель керування --- */
+  .journey-controls {
+    background-color: var(--bg-white);
+    padding: 25px 40px;
+    border-radius: 20px;
+    border: 1px solid var(--light-blue);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  /* Група контролю швидкості (Числовий ввід) */
+  .speed-control-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: var(--bg-light);
+    padding: 15px 30px;
+    border-radius: 50px; /* Овальна підкладка */
+  }
+  
+  /* Кнопки +/- */
+  .speed-btn-adjust {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid var(--light-blue);
+    background: var(--bg-white);
+    color: var(--primary-blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 4px;
+  }
+  
+  .speed-btn-adjust:hover {
+    background-color: var(--primary-blue);
+    color: #fff;
+    border-color: var(--primary-blue);
+  }
+  
+  .speed-btn-adjust:active {
+    transform: scale(0.9);
+  }
+  
+  /* Поле вводу */
+  .speed-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .speed-input {
+    width: 80px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-main);
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: monospace;
+  }
+  
+  .speed-input::-webkit-inner-spin-button, 
+  .speed-input::-webkit-outer-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+  }
+  
+  .speed-label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-secondary);
+    font-weight: 600;
+  }
+  
+  /* Група кнопок дій */
+  .buttons-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .journey-btn {
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #fff;
+    flex: 1; /* Рівномірна ширина кнопок */
+    min-width: 120px;
+    max-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .journey-btn:disabled {
+    background-color: #cfd8dc;
+    color: #90a4ae;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  /* Кольори кнопок */
+  .btn-primary {
+    background-color: var(--primary-blue);
+    box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+  }
+  .btn-primary:hover:not(:disabled) {
+    background-color: #0277bd;
+  }
+  
+  .btn-pause {
+    background-color: #ff9800;
+    box-shadow: 0 4px 10px rgba(255, 152, 0, 0.3);
+  }
+  .btn-pause:hover:not(:disabled) {
+    background-color: #f57c00;
+  }
+  
+  .btn-resume {
+    background-color: var(--accent-green);
+    box-shadow: 0 4px 10px rgba(76, 175, 80, 0.3);
+  }
+  .btn-resume:hover:not(:disabled) {
+    background-color: var(--dark-green);
+  }
+  
+  .btn-danger {
+    background-color: #fff;
+    color: var(--danger-red);
+    border: 2px solid var(--danger-red);
+    box-shadow: none;
+  }
+  .btn-danger:hover:not(:disabled) {
+    background-color: var(--danger-red);
+    color: #fff;
+  }
+  
+  /* Адаптивність */
+  @media (max-width: 768px) {
+    .canvas-wrapper {
+      width: 100%;
+    }
+    
+    .journey-canvas {
+      width: 100%;
+      height: auto; 
+      aspect-ratio: 4/3; /* Фіксуємо пропорції на телефоні */
+    }
+  
+    .speed-control-group {
+      padding: 10px 20px;
+    }
+  }

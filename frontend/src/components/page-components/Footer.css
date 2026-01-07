@@ -1,0 +1,213 @@
+/* src/components/Footer.css */
+@import '../../index.css';
+/* Загальний контейнер футера */
+.footer-whole-section {
+    background-color: var(--primary-blue); /* Твій синій фон */
+    color: var(--bg-white);
+    padding-top: 60px;
+    margin-top: 50px;
+  }
+  
+  /* --- СЕКЦІЯ ФОРМИ --- */
+  .footer-top-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px 20px;
+    /* Оскільки фото немає, ми просто залишаємо контент зліва або центруємо його */
+    display: flex;
+    justify-content: flex-start; 
+  }
+  
+  .contact-block {
+    width: 100%;
+    color: var(--bg-white);
+  }
+  
+  .contact-title {
+    color: var(--accent-green); /* Зелений колір заголовка (був жовтий) */
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+  }
+  
+  .contact-subtitle {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+  
+  /* Стилі форми (Outline style як на фото) */
+  .contact-form-dark {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+  }
+  
+  .contact-form-dark input,
+  .contact-form-dark textarea {
+    background-color: transparent; /* Прозорий фон */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Тонка біла рамка */
+    border-radius: 20px; /* Сильне заокруглення як на фото */
+    padding: 15px 20px;
+    color: var(--bg-white);
+    font-size: 0.9rem;
+    outline: none;
+    font-family: inherit;
+    transition: border-color 0.3s;
+  }
+  
+  .contact-form-dark textarea {
+    resize: vertical; /* Дозволити розтягувати тільки вниз */
+  }
+  
+  .contact-form-dark input::placeholder,
+  .contact-form-dark textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .contact-form-dark input:focus,
+  .contact-form-dark textarea:focus {
+    border-color: var(--accent-green); /* Зелена рамка при кліку (замість жовтої) */
+  }
+  
+  /* Кнопка */
+  .btn-outline {
+    width: fit-content;
+    background-color: transparent;
+    border: 2px solid var(--accent-green); /* Зелена рамка */
+    color: var(--bg-white);
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: all 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background-color: var(--accent-green);
+    color: white;
+  }
+  
+  /* --- РОЗДІЛЮВАЧ --- */
+  .footer-divider {
+    border-top: 1px solid var(--accent-green); /* Зелена лінія як на фото */
+    width: 100%;
+    margin: 0 auto;
+    opacity: 0.5;
+  }
+  
+  /* --- СЕКЦІЯ ПОСИЛАНЬ (НИЗ) --- */
+  .footer-bottom-content {
+    padding: 40px 0 20px;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  /* Логотип */
+  .footer-logo {
+    max-width: 300px;
+  }
+  
+  .footer-logo h2 {
+    color: var(--accent-green); /* Talkera логотип зеленим або білим */
+    margin: 0 0 10px 0;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .footer-logo p {
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  
+  /* Група посилань */
+  .footer-links-group {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+  }
+  
+  .link-column h4 {
+    color: var(--bg-white);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .link-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .link-column li {
+    margin-bottom: 10px;
+  }
+  
+  .link-column a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.3s;
+  }
+  
+  .link-column a:hover {
+    color: var(--accent-green);
+  }
+  
+  /* Соцмережі текстом */
+  .social-text-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .social-text-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+  
+  .social-text-links a:hover {
+    color: var(--accent-green);
+  }
+  
+  /* Копірайт */
+  .footer-copyright {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+  
+  /* АДАПТИВНІСТЬ */
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      gap: 30px;
+    }
+    
+    .footer-links-group {
+      gap: 30px;
+      flex-direction: column; 
+    }
+  
+    .footer-links-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Дві колонки на мобільному */
+    }
+  }

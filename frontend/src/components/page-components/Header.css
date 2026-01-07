@@ -1,0 +1,142 @@
+/* src/components/page-components/Header.css */
+@import '../../index.css';
+/* Основний контейнер хедера */
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: var(--bg-white); /* Білий фон */
+    border-bottom: 3px solid var(--light-blue); /* Світло-блакитна лінія знизу */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* Легка тінь */
+  }
+  
+  /* Логотип */
+  .logo {
+    flex-shrink: 0;
+  }
+
+  .logo a {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-blue); /* Синій колір */
+    text-decoration: none;
+  }
+  
+  /* Навігація */
+  nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+    font-size: 26px;
+    align-items: center;
+  }
+
+  .nav-list li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav-list a {
+    text-decoration: none;
+    color: var(--text-secondary); /* Темно-сірий для тексту */
+    font-weight: 500;
+    transition: color 0.3s;
+    display: inline-block;
+  }
+  
+  .nav-list a:hover {
+    color: var(--accent-green); /* Зелений при наведенні */
+  }
+  
+  /* Секція користувача */
+  .user-section {
+    position: relative; /* Важливо для випадаючого списку */
+    flex-shrink: 0;
+  }
+  
+  /* Кнопки (Увійти, Профіль, Вийти) */
+  .btn-login, .btn-profile, .btn-logout {
+    padding: 9px 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+  }
+  
+  /* Кнопка входу - акцентна (зелена) */
+  .btn-login {
+    background-color: var(--accent-green);
+    color: white;
+  }
+  
+  .btn-login:hover {
+    background-color: var(--dark-green);
+  }
+  
+  /* Кнопка профілю - нейтральна */
+  .btn-profile {
+    background-color: transparent;
+    color: var(--primary-blue);
+    font-weight: bold;
+  }
+  
+  /* Випадаюче меню */
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 120%; /* Трохи нижче кнопки */
+    background-color: var(--bg-white);
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 160px;
+    padding: 10px 0;
+    z-index: 100;
+  }
+  
+  .dropdown-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .dropdown-menu li {
+    padding: 0;
+  }
+  
+  .dropdown-link {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--text-main);
+  }
+  
+  .dropdown-link:hover {
+    background-color: var(--bg-light); /* Світло-зелений фон */
+  }
+  
+  .btn-logout {
+    width: 100%;
+    text-align: left;
+    background-color: transparent;
+    padding: 10px 20px;
+    color: var(--danger-red); /* Червоний для виходу */
+  }
+  
+  .btn-logout:hover {
+    background-color: #ffebee;
+  }

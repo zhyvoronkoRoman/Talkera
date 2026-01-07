@@ -1,0 +1,237 @@
+@import '../../index.css';
+/* src/pages/AboutUs.css */
+
+/* --- Герой-секція --- */
+.about-hero {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--light-blue) 100%);
+    color: var(--bg-white);
+    padding: 80px 20px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  
+  .about-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+  
+  .about-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.9;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .section-title {
+    text-align: center;
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+  
+  /* --- Секція Місії --- */
+  .mission-section {
+    margin-bottom: 80px;
+  }
+  
+  .mission-grid {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .mission-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .mission-text h2 {
+    color: var(--primary-blue);
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .mission-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    margin-bottom: 15px;
+  }
+    
+  .stat-card {
+    background-color: var(--bg-white);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid var(--light-blue);
+  }
+  
+  .stat-card h3 {
+    color: var(--accent-green);
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  
+  .stat-card p {
+    color: var(--text-secondary);
+    margin: 5px 0 0 0;
+  }
+  
+  /* --- Секція Цінностей (Чому ми) --- */
+  .values-section {
+    background-color: var(--light-blue); /* Світлий фон на всю ширину */
+    padding: 60px 0;
+    margin-bottom: 80px;
+  }
+  
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  .value-item {
+    background-color: var(--bg-white);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s;
+  }
+  
+  .value-item:hover {
+    transform: translateY(-5px);
+  }
+  
+  .value-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+  }
+  
+  .value-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+  }
+  
+  /* --- Секція Відгуків --- */
+  .reviews-section {
+    padding-bottom: 80px;
+  }
+  
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+  }
+  
+  .review-card {
+    background-color: var(--bg-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--accent-green); /* Зелена смужка зліва */
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .avatar-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+  }
+  
+  .review-header h4 {
+    margin: 0;
+    color: var(--text-main);
+  }
+  
+  .review-role {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+  
+  .review-stars {
+    margin-left: auto; /* Притискає зірки праворуч */
+    color: #ffc107; /* Золотий для зірок */
+  }
+  
+  .review-text {
+    font-style: italic;
+    color: var(--text-main);
+    line-height: 1.5;
+  }
+  
+  /* Форма додавання відгуку */
+  .add-review-block {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--bg-white);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px dashed var(--light-blue);
+  }
+  
+  .review-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+  
+  .review-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: vertical;
+    min-height: 100px;
+    font-family: inherit;
+  }
+  
+  .review-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-blue);
+  }
+  
+  .btn-review {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    align-self: center; /* Кнопка по центру */
+  }
+  
+  .btn-review:hover {
+    background-color: var(--accent-green);
+  }
+  
+  /* Адаптивність */
+  @media (max-width: 768px) {
+    .about-hero h1 { font-size: 2rem; }
+    .mission-grid { flex-direction: column; }
+  }

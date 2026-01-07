@@ -1,0 +1,186 @@
+@import '../../index.css';
+/* src/pages/AllDoctors.css */
+
+.doctors-page {
+    padding: 40px 0 80px;
+    background-color: var(--bg-light);
+    min-height: 100vh;
+  }
+  
+  /* Заголовок */
+  .doctors-header {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .doctors-header h1 {
+    color: var(--primary-blue);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .doctors-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+  
+  /* Фільтри */
+  .filter-panel {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+  
+  .filter-btn {
+    padding: 10px 25px;
+    border: 2px solid var(--light-blue);
+    border-radius: 30px;
+    background-color: transparent;
+    color: var(--text-secondary);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+  }
+  
+  .filter-btn:hover {
+    border-color: var(--primary-blue);
+    color: var(--primary-blue);
+  }
+  
+  .filter-btn.active {
+    background-color: var(--primary-blue);
+    border-color: var(--primary-blue);
+    color: white;
+    box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+  }
+  
+  /* Сітка лікарів */
+  .doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+  }
+  
+  /* Посилання-обгортка картки */
+  .doctor-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  /* Картка */
+  .doctor-card {
+    background-color: var(--bg-white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .doctor-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Бейджик статусу */
+  .status-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    z-index: 2;
+  }
+  
+  .status-badge.available {
+    background-color: var(--accent-green);
+  }
+  
+  .status-badge.busy {
+    background-color: var(--text-secondary);
+    opacity: 0.8;
+  }
+  
+  /* Фото */
+  .doctor-image-wrapper {
+    height: 250px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+  }
+  
+  .doctor-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+  }
+  
+  .doctor-card:hover .doctor-image-wrapper img {
+    transform: scale(1.05);
+  }
+  
+  /* Інформація */
+  .doctor-info {
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1; /* Розтягує блок, щоб кнопки були на одному рівні */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .doctor-profession {
+    color: var(--accent-green);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+  }
+  
+  .doctor-name {
+    color: var(--primary-blue);
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
+  
+  .doctor-exp {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+  
+  .btn-details {
+    margin-top: auto; /* Притискає кнопку до низу картки */
+    padding: 10px 30px;
+    background-color: transparent;
+    border: 2px solid var(--primary-blue);
+    color: var(--primary-blue);
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  .doctor-card:hover .btn-details {
+    background-color: var(--primary-blue);
+    color: white;
+  }
+  
+  .no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+  }
